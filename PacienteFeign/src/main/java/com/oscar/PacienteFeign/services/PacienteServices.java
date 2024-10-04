@@ -30,12 +30,12 @@ public class PacienteServices implements IPacienteServices{
 
     @Override
     public Paciente findPaciente(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return pacienteRepo.findById(id).orElse(null);
     }
 
     @Override
     public void editPaciente(Paciente pac) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.savePaciente(pac);
     }
     
 }
