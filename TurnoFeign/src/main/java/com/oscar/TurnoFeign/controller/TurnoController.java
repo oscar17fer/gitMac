@@ -3,6 +3,7 @@ package com.oscar.TurnoFeign.controller;
 
 import com.oscar.TurnoFeign.DTO.TurnoDTO;
 import com.oscar.TurnoFeign.entity.Turno;
+import com.oscar.TurnoFeign.repository.PacienteAPIClient;
 import com.oscar.TurnoFeign.services.TurnoServices;
 import java.time.LocalDate;
 import java.util.List;
@@ -23,10 +24,19 @@ public class TurnoController {
     @Autowired
     private TurnoServices turnoServ;
     
+    @Autowired
+    private PacienteAPIClient PacienteAPIClient;
+    
+    // 0 trear dto por medio de la api
+    @GetMapping("/pacienteApi/{dniPaciente}")
+    public TurnoDTO getPacienteInfo(@PathVariable ("dniPaciente") String dniPaciente){
+        return PacienteAPIClient.getPacienteInfo(dniPaciente);
+    }
+    
     // 1 crearun nuevo turno 
     @PostMapping("/crear")
     public String crearTurno(@RequestBody TurnoDTO turnoDTO){
-        turnoServ.saveTurno(turnoDTO.getFecha(), turnoDTO.getTratamiento(), turnoDTO.getDniPaciente());
+        
         
         return "turno creado correctamente";
     }
