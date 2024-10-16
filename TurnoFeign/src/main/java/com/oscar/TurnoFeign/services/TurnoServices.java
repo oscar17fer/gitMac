@@ -1,6 +1,7 @@
 
 package com.oscar.TurnoFeign.services;
 
+import com.oscar.TurnoFeign.DTO.TurnoDTO;
 import com.oscar.TurnoFeign.entity.Turno;
 import com.oscar.TurnoFeign.repository.ITurnoRepository;
 import java.time.LocalDate;
@@ -20,8 +21,8 @@ public class TurnoServices implements ITurnoServices {
     }
 
     @Override
-    public void saveTurno(LocalDate fecha, String tratamiento, String dniPAciente) {
-        //buscar el paciente en la api pacientes
+    public void saveTurno(TurnoDTO turno) {
+        //buscar el paciente en la api pacientes test
         //Paciente pac= buscar en la appi
         //String nombre completo =lo que consumo de l nombre de la api
     }
