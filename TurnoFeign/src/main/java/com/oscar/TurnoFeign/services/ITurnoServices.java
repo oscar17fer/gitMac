@@ -11,4 +11,10 @@ public interface ITurnoServices {
     public List<Turno>getTurnos();
     
     public void saveTurno(LocalDate fecha, String tratamiento, String dniPAciente);
+    
+    public  void deleteTurno(Long id);
+    
+    public Turno findTurno(Long id);
+    
+    public void editTurno(Long id, Turno turno);
 }
