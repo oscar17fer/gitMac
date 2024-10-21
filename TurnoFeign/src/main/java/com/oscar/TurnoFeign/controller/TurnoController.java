@@ -5,7 +5,6 @@ import com.oscar.TurnoFeign.DTO.TurnoDTO;
 import com.oscar.TurnoFeign.entity.Turno;
 import com.oscar.TurnoFeign.repository.PacienteAPIClient;
 import com.oscar.TurnoFeign.services.TurnoServices;
-import java.time.LocalDate;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -37,7 +36,7 @@ public class TurnoController {
     @PostMapping("/crear")
     public String crearTurno(@RequestBody TurnoDTO turnoDTO){
         
-        
+        turnoDTO.getDniPaciente()
         return "turno creado correctamente";
     }
      

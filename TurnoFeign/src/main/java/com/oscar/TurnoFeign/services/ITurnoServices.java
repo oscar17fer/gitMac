@@ -11,7 +11,7 @@ public interface ITurnoServices {
     
     public List<Turno>getTurnos();
     
-    public void saveTurno(TurnoDTO turno);
+    public void saveTurno();
     
     public  void deleteTurno(Long id);
     
